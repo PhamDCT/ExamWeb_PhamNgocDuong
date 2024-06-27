@@ -1,0 +1,28 @@
+﻿@model DiaNhac
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <h2> Xóa Sản Phẩm</h2>
+    <hr />
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="TuaCD" disabled class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Nghệ Sĩ</label>
+        <input asp-for="NgheSi" disabled class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>TheLoai</label>
+        <input asp-for="TrongNuoc" disabled class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Số Lượng</label>
+        <input asp-for="SoLuong" disabled class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Giá Bán</label>
+        <input asp-for="GiaBan" disabled class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-danger"> Xóa </button>
+    <a asp-action="Index" class="btn btn-secondary">Trở Lại</a>
+</form>

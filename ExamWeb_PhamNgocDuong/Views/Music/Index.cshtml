@@ -1,0 +1,47 @@
+﻿@model List<DiaNhac>
+<div class="row">
+    <div class="col-md-6">
+        <h2>Danh Sách Đĩa Nhạc </h2>
+    </div>
+    <div class="col-md-6 text-right">
+        <a asp-action="Add" class="btn btn-primary">
+            <i class="bi bi-plus-circle-fill"></i> Thêm Mới
+        </a>
+    </div>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Tựa CD</th>
+            <th>Nghệ Sĩ</th>
+            <th>Thể Loại</th>
+            <th>Giá Bán</th>
+            <th>Số Lượng</th>
+            <th> Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+        <tr>
+            <td>@x.TuaCD</td>
+            <td>@x.NgheSi</td>
+            @if (x.TrongNuoc == true)
+            {
+        <td>Việt Nam</td> }
+                        else
+                        {
+        <td>Nước Ngoài</td>}
+            <td>@x.GiaBan</td>
+            <td>@x.SoLuong</td>
+            <td>
+                <a asp-action="Update" asp-route-id="@x.Id" class="btn btn-success">
+                    <i class="bi bi-pencil-square"></i> Sửa
+                </a>
+                <a asp-action="Delete" asp-route-id="@x.Id" class="btn btn-danger">
+                    <i class="bi bi-trash"></i> Xóa
+                </a>
+            </td>
+        </tr>}
+    </tbody>
+</table>
